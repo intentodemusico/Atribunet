@@ -78,12 +78,12 @@ class _$UserResponse extends UserResponse {
   final DateTime createdAt;
   
   @override
-  String imageUrl='assets/user.png';
+  String imageUrl;
 
   factory _$UserResponse([void Function(UserResponseBuilder) updates]) =>
       (new UserResponseBuilder()..update(updates)).build();
 
-  _$UserResponse._({this.name, this.email, this.createdAt, imageUrl})
+  _$UserResponse._({this.name, this.email, this.createdAt, this.imageUrl})
       : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('UserResponse', 'name');
@@ -129,7 +129,7 @@ class _$UserResponse extends UserResponse {
           ..add('name', name)
           ..add('email', email)
           ..add('createdAt', createdAt)
-          ..add('imageUrl', 'assets/user.png'))
+          ..add('imageUrl', imageUrl))
         .toString();
   }
 }
@@ -152,7 +152,7 @@ class UserResponseBuilder
 @nullable
   String _imageUrl;
   String get imageUrl => _$this._imageUrl;
-  set imageUrl(String imageUrl) => _$this._imageUrl = 'assets/user.png';
+  set imageUrl(String imageUrl) => _$this._imageUrl = imageUrl;
 
   UserResponseBuilder();
 
@@ -184,7 +184,7 @@ class UserResponseBuilder
   _$UserResponse build() {
     final _$result = _$v ??
         new _$UserResponse._(
-            name: name, email: email, createdAt: createdAt, imageUrl: 'assets/user.png');
+            name: name, email: email, createdAt: createdAt, imageUrl: 'assets/user.png');//imageUrl);//ACÁ
     replace(_$result);
     return _$result;
   }
