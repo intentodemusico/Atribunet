@@ -127,7 +127,7 @@ class _$UserEntity extends UserEntity {
           ..add('name', name)
           ..add('email', email)
           ..add('createdAt', createdAt)
-          ..add('imageUrl', 'assets/user.png'))
+          ..add('imageUrl', imageUrl))
         .toString();
   }
 }
@@ -149,7 +149,7 @@ class UserEntityBuilder implements Builder<UserEntity, UserEntityBuilder> {
 
   String _imageUrl;
   String get imageUrl => _$this._imageUrl;
-  set imageUrl(String imageUrl) => _$this._imageUrl = 'assets/user.png';
+  set imageUrl(String imageUrl) => _$this._imageUrl = imageUrl;
 
   UserEntityBuilder();
 

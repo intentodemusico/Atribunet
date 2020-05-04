@@ -145,7 +145,7 @@ class _RegisterPageState extends State<RegisterPage>
 
   void handleMessage(RegisterMessage message) async {
     if (message is RegisterSuccessMessage) {
-      scaffoldKey.showSnackBar('Registera successfully');
+      scaffoldKey.showSnackBar('Register successfully');
       await delay(1000);
       Navigator.pop<String>(context, message.email);
     }
@@ -213,7 +213,7 @@ class _RegisterPageState extends State<RegisterPage>
         },
         color: Theme.of(context).backgroundColor,
         child: Text(
-          'REGISTERA',
+          'REGISTER',
           style: TextStyle(
             color: Colors.white,
             fontSize: 16.0,
