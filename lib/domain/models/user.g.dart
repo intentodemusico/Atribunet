@@ -14,7 +14,7 @@ class _$User extends User {
   @override
   final DateTime createdAt;
   @override
-  String imageUrl;//='assets/user.png';
+  String imageUrl='assets/user.png';
 
   factory _$User([void Function(UserBuilder) updates]) =>
       (new UserBuilder()..update(updates)).build();
@@ -86,7 +86,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
 
   String _imageUrl;
   String get imageUrl => _$this._imageUrl;
-  set imageUrl(String imageUrl) => _$this._imageUrl = imageUrl;
+  set imageUrl(String imageUrl) => _$this._imageUrl = 'assets/user.png';
 
   UserBuilder();
 
@@ -118,7 +118,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
   _$User build() {
     final _$result = _$v ??
         new _$User._(
-            name: name, email: email, createdAt: createdAt, imageUrl: imageUrl);
+            name: name, email: email, createdAt: createdAt, imageUrl: 'assets/user.png');
     replace(_$result);
     return _$result;
   }
