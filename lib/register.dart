@@ -39,9 +39,11 @@ class _RegisterPageState extends State<RegisterPage>
     apiService = new ApiService();
   }
 
+
   @override
   void dispose() {
     assert(() {
+      var _ticker;
       if (_ticker == null || !_ticker.isActive)
         return true;
       throw FlutterError.fromParts(<DiagnosticsNode>[

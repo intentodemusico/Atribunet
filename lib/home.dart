@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:node_auth/api_service.dart';
 import 'package:node_auth/main.dart';
-
+import 'package:node_auth/pages/login/login.dart';
 import 'package:image_picker/image_picker.dart';
 
 
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   User _user;
   ApiService _apiService;
 
-  final _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final _scaffoldKey =  GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
     _token = widget.token;
     _email = widget.email;
     _createdAt = 'loading...';
-    _apiService = new ApiService();
+    _apiService =  ApiService();
 
     getUserInformation();
   }
@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                     new MaterialPageRoute(builder: (BuildContext context) {
-                      return new LoginPage();
+                      return LoginPage();
                     }),
                   );
                 },
