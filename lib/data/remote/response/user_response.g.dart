@@ -78,7 +78,6 @@ class _$UserResponse extends UserResponse {
   final DateTime createdAt;
   
   @override
-  @nullable
   String imageUrl;
 
   factory _$UserResponse([void Function(UserResponseBuilder) updates]) =>
@@ -185,7 +184,7 @@ class UserResponseBuilder
   _$UserResponse build() {
     final _$result = _$v ??
         new _$UserResponse._(
-            name: name, email: email, createdAt: createdAt, imageUrl: 'assets/user.png');//ACÁ va imageUrl
+            name: name, email: email, createdAt: createdAt, imageUrl: 'assets/user.png');//imageUrl);//ACÁ
     replace(_$result);
     return _$result;
   }

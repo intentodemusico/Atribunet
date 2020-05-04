@@ -75,10 +75,8 @@ class _$UserEntity extends UserEntity {
   final String email;
   @override
   final DateTime createdAt;
-  @nullable
   @override
-  @nullable
-  String imageUrl;//='assets/user.png';
+  String imageUrl='assets/user.png';
 
   factory _$UserEntity([void Function(UserEntityBuilder) updates]) =>
       (new UserEntityBuilder()..update(updates)).build();
@@ -94,9 +92,9 @@ class _$UserEntity extends UserEntity {
     if (createdAt == null) {
       throw new BuiltValueNullFieldError('UserEntity', 'createdAt');
     }
-    if (imageUrl == null) {
+    /*if (imageUrl == null) {
       throw new BuiltValueNullFieldError('UserEntity', 'imageUrl');
-    }
+    }*/
   }
 
   @override
@@ -129,7 +127,7 @@ class _$UserEntity extends UserEntity {
           ..add('name', name)
           ..add('email', email)
           ..add('createdAt', createdAt)
-          ..add('imageUrl', imageUrl))
+          ..add('imageUrl', 'assets/user.png'))
         .toString();
   }
 }
@@ -151,7 +149,7 @@ class UserEntityBuilder implements Builder<UserEntity, UserEntityBuilder> {
 
   String _imageUrl;
   String get imageUrl => _$this._imageUrl;
-  set imageUrl(String imageUrl) => _$this._imageUrl = imageUrl;
+  set imageUrl(String imageUrl) => _$this._imageUrl = 'assets/user.png';
 
   UserEntityBuilder();
 
@@ -183,7 +181,7 @@ class UserEntityBuilder implements Builder<UserEntity, UserEntityBuilder> {
   _$UserEntity build() {
     final _$result = _$v ??
         new _$UserEntity._(
-            name: name, email: email, createdAt: createdAt, imageUrl: 'assets/user.png');
+            name: name, email: email, createdAt: createdAt, imageUrl: imageUrl);
     replace(_$result);
     return _$result;
   }

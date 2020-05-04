@@ -213,7 +213,7 @@ class _RegisterPageState extends State<RegisterPage>
         },
         color: Theme.of(context).backgroundColor,
         child: Text(
-          'REGISTER',
+          'REGISTERA',
           style: TextStyle(
             color: Colors.white,
             fontSize: 16.0,
