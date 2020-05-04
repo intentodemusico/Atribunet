@@ -78,6 +78,7 @@ class _$UserResponse extends UserResponse {
   final DateTime createdAt;
   
   @override
+  @nullable
   String imageUrl='assets/user.png';
 
   factory _$UserResponse([void Function(UserResponseBuilder) updates]) =>
