@@ -13,13 +13,14 @@ class _$User extends User {
   final String email;
   @override
   final DateTime createdAt;
+  @nullable
   @override
-  String imageUrl;//='assets/user.png';
+  String imageUrl;
 
   factory _$User([void Function(UserBuilder) updates]) =>
       (new UserBuilder()..update(updates)).build();
 
-  _$User._({this.name, this.email, this.createdAt, imageUrl}) : super._() {
+  _$User._({this.name, this.email, this.createdAt, this.imageUrl}) : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('User', 'name');
     }
