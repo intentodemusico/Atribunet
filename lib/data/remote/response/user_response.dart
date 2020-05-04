@@ -17,6 +17,7 @@ abstract class UserResponse
 
   @BuiltValueField(wireName: 'image_url')
   String get imageUrl;
+  
 
   static Serializer<UserResponse> get serializer => _$userResponseSerializer;
 

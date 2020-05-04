@@ -14,12 +14,12 @@ class _$User extends User {
   @override
   final DateTime createdAt;
   @override
-  final String imageUrl;
+  String imageUrl='assets/user.png';
 
   factory _$User([void Function(UserBuilder) updates]) =>
       (new UserBuilder()..update(updates)).build();
 
-  _$User._({this.name, this.email, this.createdAt, this.imageUrl}) : super._() {
+  _$User._({this.name, this.email, this.createdAt, imageUrl}) : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('User', 'name');
     }
@@ -86,7 +86,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
 
   String _imageUrl;
   String get imageUrl => _$this._imageUrl;
-  set imageUrl(String imageUrl) => _$this._imageUrl = imageUrl;
+  set imageUrl(String imageUrl) => _$this._imageUrl = 'assets/user.png';
 
   UserBuilder();
 
@@ -118,7 +118,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
   _$User build() {
     final _$result = _$v ??
         new _$User._(
-            name: name, email: email, createdAt: createdAt, imageUrl: imageUrl);
+            name: name, email: email, createdAt: createdAt, imageUrl: 'assets/user.png');
     replace(_$result);
     return _$result;
   }

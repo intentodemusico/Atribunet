@@ -21,13 +21,13 @@ class User {
   final String name;
   final String email;
   final DateTime createdAt;
-  final String imageUrl;
+  String imageUrl;
 
   User.fromJson(Map<String, dynamic> json)
       : name = json['name'],
         email = json['email'],
-        createdAt = DateTime.tryParse(json['created_at']) ?? new DateTime.now(),
-        imageUrl = json['image_url'];
+        createdAt = DateTime.tryParse(json['created_at']) ??  DateTime.now(),
+        imageUrl = 'assets/user.png';
 
   @override
   String toString() => '$name, $email, $imageUrl';
@@ -48,11 +48,11 @@ class ApiService {
 
   // return message and token
   Future<Response> loginUser(String email, String password) async {
-    final url = new Uri.https(baseUrl, '/users/authenticate');
+    final url =  Uri.https(baseUrl, '/users/authenticate');
     final credentials = '$email:$password';
     final basic = 'Basic ${base64Encode(utf8.encode(credentials))}';
     final json = await NetworkUtils.post(url, headers: {
-      HttpHeaders.AUTHORIZATION: basic,
+      HttpHeaders.authorizationHeader: basic,
     });
     return Response.fromJson(json);
   }
@@ -60,27 +60,27 @@ class ApiService {
   // return message
   Future<Response> registerUser(
       String name, String email, String password) async {
-    final url = new Uri.https(baseUrl, '/users');
+    final url =  Uri.https(baseUrl, '/users');
     final body = <String, String>{
       'name': name,
       'email': email,
       'password': password,
     };
     final decoded = await NetworkUtils.post(url, body: body);
-    return new Response.fromJson(decoded);
+    return  Response.fromJson(decoded);
   }
 
   Future<User> getUserProfile(String email, String token) async {
-    final url = new Uri.https(baseUrl, '/users/$email');
+    final url =  Uri.https(baseUrl, '/users/$email');
     final json = await NetworkUtils.get(url, headers: {xAccessToken: token});
     return User.fromJson(json);
   }
 
   // return message
   Future<Response> changePassword(
-      String email, String password, String newPassword, String token) async {
-    final url = new Uri.http(baseUrl, "/users/$email/password");
-    final body = {'password': password, 'new_password': newPassword};
+      String email, String password, String Password, String token) async {
+    final url =  Uri.http(baseUrl, '/users/$email/password');
+    final body = {'password': password, '_password': Password};
     final json = await NetworkUtils.put(
       url,
       headers: {xAccessToken: token},
@@ -90,15 +90,15 @@ class ApiService {
   }
 
   // return message
-  // special token and newPassword to reset password,
+  // special token and Password to reset password,
   // otherwise, send an email to email
   Future<Response> resetPassword(String email,
-      {String token, String newPassword}) async {
-    final url = new Uri.https(baseUrl, '/users/$email/password');
-    final task = token != null && newPassword != null
+      {String token, String Password}) async {
+    final url =  Uri.https(baseUrl, '/users/$email/password');
+    final task = token != null && Password != null
         ? NetworkUtils.post(url, body: {
             'token': token,
-            'new_password': newPassword,
+            '_password': Password,
           })
         : NetworkUtils.post(url);
     final json = await task;
@@ -106,13 +106,13 @@ class ApiService {
   }
 
   Future<User> uploadImage(File file, String email) async {
-    final url = new Uri.https(baseUrl, '/users/upload');
-    final stream = new http.ByteStream(file.openRead());
+    final url =  Uri.https(baseUrl, '/users/upload');
+    final stream =  http.ByteStream(file.openRead());
     final length = await file.length();
-    final request = new http.MultipartRequest('POST', url)
+    final request =  http.MultipartRequest('POST', url)
       ..fields['user'] = email
       ..files.add(
-        new http.MultipartFile('my_image', stream, length, filename: path.basename(file.path)),
+         http.MultipartFile('my_image', stream, length, filename: path.basename(file.path)),
       );
     final streamedReponse = await request.send();
     final statusCode = streamedReponse.statusCode;
@@ -150,7 +150,7 @@ class NetworkUtils {
 
   static Future _helper(String method, Uri url,
       {Map<String, String> headers, Map<String, String> body}) async {
-    final request = new http.Request(method, url);
+    final request =  http.Request(method, url);
     if (body != null) {
       request.bodyFields = body;
     }
