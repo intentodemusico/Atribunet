@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                       children: <Widget>[
                         ClipOval(
                           child:  GestureDetector(
-                            child: _user?.imageUrl != null
+                            child: _user?.imageUrl == null
                                 ? Image.network(
                                      Uri.https(
                                             ApiService.baseUrl, _user?.imageUrl)
