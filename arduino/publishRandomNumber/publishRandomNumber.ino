@@ -6,7 +6,9 @@
 //#include <EEPROM.h>
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
+#include <ArduinoJson.h>
 #include <Wire.h>
+#include <Time.h>
 #define LED_BUILTIN 2  
 
 const char* ssid = "Tell my Wi-Fi love her"; // Rellena con el nombre de tu red WiFi
@@ -14,7 +16,6 @@ const char* password = "246813579"; // Rellena con la contraseña de tu red WiFi
 
 long lastMsg = 0;
 int value = 0;
-char msg[50];
 
 const char* mqtt_server = "broker.hivemq.com";                 //!!!!!!!!!!!!!!!!!!!!!
 int randNumber;
@@ -35,6 +36,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
   Serial.println();
 }
  */
+char data[1024];
+DynamicJsonDocument doc(1024);
 
  void callback(char* topic, byte* payload, unsigned int length) {
   Serial.print("Message arrived [");
@@ -123,12 +126,29 @@ void loop()
  
   long now = millis();
   if (now - lastMsg > 2000) {
+   randNumber=random(5191951952181);   
+  
+  // Format your message to Octoblu here as JSON
+  // Include commas between each added element. 
+  doc["node"]="arduino_esp8266-nodemcu_1";
+ String timestamp=String(now);
+  doc["timestamp"]=timestamp;
+  doc["data"]=String(randNumber);
+  
+  // This sends off your payload. 
+  //String payload = "{ \"node\": \"arduino1\",\"timestamp\":\""+timestamp+"\", \"data\": \"hola\"}"//+value +"\" }";
+
+size_t n = serializeJson(doc, data);
+  
     lastMsg = now;
-    randNumber=random(5191951952181);
-    snprintf (msg, 75, "Nodo 1: #%ld", randNumber);
+    
+    //snprintf (msg, 75, "Nodo 1: #%ld", randNumber);
+    
+    
     Serial.print("Publish message: ");
-    Serial.println(msg);
-    client.publish("analytica/data", msg);
+    Serial.println(data);
+    client.publish("analytica/data", data,n);
+    
   }
  /* 
  
