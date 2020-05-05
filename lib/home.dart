@@ -5,6 +5,7 @@ import 'package:node_auth/api_service.dart';
 //import 'package:node_auth/main.dart';
 import 'package:node_auth/pages/login/login.dart';
 import 'package:image_picker/image_picker.dart';
+import 'pages/graph/sparkline.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -129,6 +130,25 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                      MaterialPageRoute(builder: (BuildContext context) {
+                      return LoginPage();
+                    }),
+                  );
+                },
+                label:  Text('Logout'),
+                icon:  Icon(Icons.exit_to_app),
+                color: Theme.of(context).backgroundColor,
+                colorBrightness: Brightness.dark,
+                splashColor: Colors.white.withOpacity(0.5),
+              ),
+            ),
+            Container(
+              height: 48.0,
+              margin:  EdgeInsets.only(left: 8.0, right: 8.0, top: 16.0),
+              width: double.infinity,
+              child:  RaisedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (BuildContext context) {
                       return LoginPage();
                     }),
                   );
