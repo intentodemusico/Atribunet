@@ -10,11 +10,11 @@ class Chart extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'CAMBIE ESTO, PUTO',
       theme: ThemeData(
         primaryColor: Color(0xffff6101),
       ),
-      home: MyHomePage(title: 'Sales Dashboard 2018'),
+      home: MyHomePage(title: 'y esto'),
     );
   }
 }
@@ -33,12 +33,12 @@ class _MyHomePageState extends State<MyHomePage> {
   var data1 = [0.0,-2.0,3.5,-2.0,0.5,0.7,0.8,1.0,2.0,3.0,3.2];
 
   List<CircularStackEntry> circularData = <CircularStackEntry>[
-    new CircularStackEntry(
+    CircularStackEntry(
       <CircularSegmentEntry>[
-        new CircularSegmentEntry(700.0, Color(0xff4285F4), rankKey: 'Q1'),
-        new CircularSegmentEntry(1000.0, Color(0xfff3af00), rankKey: 'Q2'),
-        new CircularSegmentEntry(1800.0, Color(0xffec3337), rankKey: 'Q3'),
-        new CircularSegmentEntry(1000.0, Color(0xff40b24b), rankKey: 'Q4'),
+        CircularSegmentEntry(700.0, Color(0xff4285F4), rankKey: 'Q1'),
+        CircularSegmentEntry(1000.0, Color(0xfff3af00), rankKey: 'Q2'),
+        CircularSegmentEntry(1800.0, Color(0xffec3337), rankKey: 'Q3'),
+        CircularSegmentEntry(1000.0, Color(0xff40b24b), rankKey: 'Q4'),
       ],
       rankKey: 'Quarterly Profits',
     ),
@@ -174,7 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   Padding(
                     padding: EdgeInsets.all(1.0),
-                    child: new Sparkline(
+                    child: Sparkline(
                       data: data,
                       lineColor: Color(0xffff6101),
                       pointsMode: PointsMode.all,
@@ -232,10 +232,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   Padding(
                     padding: EdgeInsets.all(1.0),
-                    child: new Sparkline(
+                    child: Sparkline(
                       data: data1,
                       fillMode: FillMode.below,
-                      fillGradient: new LinearGradient(
+                      fillGradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [Colors.amber[800], Colors.amber[200]],
@@ -276,23 +276,23 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: mychart1Items("Sales by Month","421.3M","+12.9% of target"),
+              child: mychart1Items('Sales by Month','421.3M','+12.9% of target'),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: myCircularItems("Quarterly Profits","68.7M"),
+              child: myCircularItems('Quarterly Profits','68.7M'),
             ),
             Padding(
               padding: const EdgeInsets.only(right:8.0),
-              child: myTextItems("Mktg. Spend","48.6M"),
+              child: myTextItems('Mktg. Spend','48.6M'),
             ),
             Padding(
               padding: const EdgeInsets.only(right:8.0),
-              child: myTextItems("Users","25.5M"),
+              child: myTextItems('Users','25.5M'),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: mychart2Items("Conversion","0.9M","+19% of target"),
+              child: mychart2Items('Conversion','0.9M','+19% of target'),
             ),
 
           ],

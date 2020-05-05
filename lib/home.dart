@@ -5,8 +5,6 @@ import 'package:node_auth/api_service.dart';
 //import 'package:node_auth/main.dart';
 import 'package:node_auth/pages/login/login.dart';
 import 'package:image_picker/image_picker.dart';
-import 'pages/graph/sparkline.dart';
-
 
 class HomePage extends StatefulWidget {
   final String token;
