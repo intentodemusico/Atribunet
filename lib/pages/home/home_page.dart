@@ -57,7 +57,6 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     final homeBloc = BlocProvider.of<HomeBloc>(context);
-    final sparkline= Sparkline;
     final logoSize = MediaQuery.of(context).size.width / 2;
 
     return Scaffold(
