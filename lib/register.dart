@@ -199,7 +199,7 @@ class _RegisterPageState extends State<RegisterPage>
     );
   }
 
-  _getToolbar(BuildContext context) {
+  Widget _getToolbar(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
       child: BackButton(color: Colors.white),

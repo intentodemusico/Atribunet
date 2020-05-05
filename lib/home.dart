@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  getUserInformation() async {
+  void getUserInformation() async {
     try {
       final user = await _apiService.getUserProfile(_email, _token);
       setState(() {
@@ -174,7 +174,7 @@ class _HomePageState extends State<HomePage> {
       });
     } on MyHttpException catch (e) {
       _scaffoldKey.currentState.showSnackBar(
-         SnackBar(content:  Text(e.message)),
+        SnackBar(content:  Text(e.message)),
       );
     } catch (e) {
       _scaffoldKey.currentState.showSnackBar( SnackBar(
@@ -183,7 +183,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  _showChangePassword() {
+  void _showChangePassword() {
     _scaffoldKey.currentState.showBottomSheet((context) {
       return  ChangePasswordBottomSheet(
         email: _email,
@@ -192,7 +192,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  _pickAndUploadImage() async {
+  void _pickAndUploadImage() async {
     try {
       final imageFile = await ImagePicker.pickImage(
         source: ImageSource.gallery,
@@ -201,7 +201,7 @@ class _HomePageState extends State<HomePage> {
       );
       final user = await _apiService.uploadImage(imageFile, _email);
       _scaffoldKey.currentState.showSnackBar(
-         SnackBar(
+        SnackBar(
           content:  Text('Changed avatar successfully!'),
         ),
       );
@@ -339,15 +339,15 @@ class _ChangePasswordBottomSheetState extends State<ChangePasswordBottomSheet> {
         child:  Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-             Padding(
+            Padding(
               padding: const EdgeInsets.all(8.0),
               child: passwordTextField,
             ),
-             Padding(
+            Padding(
               padding: const EdgeInsets.all(8.0),
               child: PasswordTextField,
             ),
-             Padding(
+            Padding(
               padding: const EdgeInsets.all(32.0),
               child: changePasswordButton,
             )
@@ -357,7 +357,7 @@ class _ChangePasswordBottomSheetState extends State<ChangePasswordBottomSheet> {
     );
   }
 
-  _changePassword() async {
+  void _changePassword() async {
     setState(() => _isLoading = true);
 
     if (!_formKey.currentState.validate()) {

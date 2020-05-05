@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_pattern/flutter_bloc_pattern.dart';
 import 'package:flutter_provider/flutter_provider.dart';
-import 'package:flutter_sparkline/flutter_sparkline.dart';
 import 'package:node_auth/domain/usecases/change_password_use_case.dart';
 import 'package:node_auth/pages/home/change_password/change_password.dart';
 import 'package:node_auth/pages/home/home.dart';
@@ -57,7 +56,7 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     final homeBloc = BlocProvider.of<HomeBloc>(context);
-    final logoSize = MediaQuery.of(context).size.width / 2;
+    //final logoSize = MediaQuery.of(context).size.width / 2;
 
     return Scaffold(
       key: scaffoldKey,
