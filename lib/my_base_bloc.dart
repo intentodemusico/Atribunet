@@ -1,5 +1,5 @@
 import 'package:flutter_bloc_pattern/flutter_bloc_pattern.dart';
-import 'package:node_auth/utils/type_defs.dart';
+import 'package:analytica/utils/type_defs.dart';
 
 class MyBaseBloc implements BaseBloc {
   bool _calledDispose = false;

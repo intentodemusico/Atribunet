@@ -1,5 +1,5 @@
 import 'package:built_value/built_value.dart';
-import 'package:node_auth/domain/models/user.dart';
+import 'package:analytica/domain/models/user.dart';
 
 part 'user_and_token.g.dart';
 

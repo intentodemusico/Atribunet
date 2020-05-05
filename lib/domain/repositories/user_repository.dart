@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:meta/meta.dart';
-import 'package:node_auth/domain/models/auth_state.dart';
-import 'package:node_auth/utils/result.dart';
+import 'package:analytica/domain/models/auth_state.dart';
+import 'package:analytica/utils/result.dart';
 
 abstract class UserRepository {
   Stream<AuthenticationState> get authenticationState$;

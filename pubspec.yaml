@@ -1,4 +1,4 @@
-name: node_auth
+name: analytica
 description: Simple auth app flutter, server node.js, BLoC pattern, RxDart.
 
 environment:

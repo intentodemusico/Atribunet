@@ -4,14 +4,14 @@ import 'dart:io';
 import 'package:disposebag/disposebag.dart';
 import 'package:distinct_value_connectable_stream/distinct_value_connectable_stream.dart';
 import 'package:meta/meta.dart';
-import 'package:node_auth/domain/models/auth_state.dart';
-import 'package:node_auth/domain/usecases/get_auth_state_stream_use_case.dart';
-import 'package:node_auth/domain/usecases/logout_use_case.dart';
-import 'package:node_auth/domain/usecases/upload_image_use_case.dart';
-import 'package:node_auth/my_base_bloc.dart';
-import 'package:node_auth/pages/home/home_state.dart';
-import 'package:node_auth/utils/result.dart';
-import 'package:node_auth/utils/type_defs.dart';
+import 'package:analytica/domain/models/auth_state.dart';
+import 'package:analytica/domain/usecases/get_auth_state_stream_use_case.dart';
+import 'package:analytica/domain/usecases/logout_use_case.dart';
+import 'package:analytica/domain/usecases/upload_image_use_case.dart';
+import 'package:analytica/my_base_bloc.dart';
+import 'package:analytica/pages/home/home_state.dart';
+import 'package:analytica/utils/result.dart';
+import 'package:analytica/utils/type_defs.dart';
 import 'package:rxdart/rxdart.dart';
 
 //ignore_for_file: close_sinks

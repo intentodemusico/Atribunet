@@ -1,13 +1,13 @@
 import 'dart:convert';
 
-import 'package:node_auth/data/exception/local_data_source_exception.dart';
-import 'package:node_auth/data/local/entities/user_and_token_entity.dart';
-import 'package:node_auth/data/local/local_data_source.dart';
+import 'package:analytica/data/exception/local_data_source_exception.dart';
+import 'package:analytica/data/local/entities/user_and_token_entity.dart';
+import 'package:analytica/data/local/local_data_source.dart';
 import 'package:rx_shared_preferences/rx_shared_preferences.dart';
 import 'package:rxdart/rxdart.dart';
 
 class SharedPrefUtil implements LocalDataSource {
-  static const _kUserTokenKey = 'com.hoc.node_auth_flutter.user_and_token';
+  static const _kUserTokenKey = 'com.hoc.analytica_flutter.user_and_token';
   final RxSharedPreferences _rxPrefs;
 
   @override

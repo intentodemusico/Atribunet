@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:node_auth/data/remote/response/token_response.dart';
-import 'package:node_auth/data/remote/response/user_response.dart';
+import 'package:analytica/data/remote/response/token_response.dart';
+import 'package:analytica/data/remote/response/user_response.dart';
 
 abstract class RemoteDataSource {
   Future<TokenResponse> loginUser(String email, String password);

@@ -1,4 +1,4 @@
-import 'package:node_auth/data/local/entities/user_and_token_entity.dart';
+import 'package:analytica/data/local/entities/user_and_token_entity.dart';
 
 abstract class LocalDataSource {
   Stream<UserAndTokenEntity> get userAndToken$;

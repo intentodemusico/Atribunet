@@ -1,6 +1,6 @@
 import 'package:built_value/built_value.dart';
 import 'package:meta/meta.dart';
-import 'package:node_auth/domain/models/user_and_token.dart';
+import 'package:analytica/domain/models/user_and_token.dart';
 
 part 'auth_state.g.dart';
 

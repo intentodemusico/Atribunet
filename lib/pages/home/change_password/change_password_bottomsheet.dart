@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_pattern/flutter_bloc_pattern.dart';
-import 'package:node_auth/pages/home/change_password/change_password.dart';
-import 'package:node_auth/widgets/password_textfield.dart';
+import 'package:analytica/pages/home/change_password/change_password.dart';
+import 'package:analytica/widgets/password_textfield.dart';
 
 class ChangePasswordBottomSheet extends StatefulWidget {
   const ChangePasswordBottomSheet({Key key}) : super(key: key);

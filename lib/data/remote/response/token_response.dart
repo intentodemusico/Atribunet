@@ -1,6 +1,6 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:node_auth/data/serializers.dart';
+import 'package:analytica/data/serializers.dart';
 
 part 'token_response.g.dart';
 

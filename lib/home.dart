@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:node_auth/api_service.dart';
-//import 'package:node_auth/main.dart';
-import 'package:node_auth/pages/login/login.dart';
+import 'package:analytica/api_service.dart';
+//import 'package:analytica/main.dart';
+import 'package:analytica/pages/login/login.dart';
 import 'package:image_picker/image_picker.dart';
 
 class HomePage extends StatefulWidget {

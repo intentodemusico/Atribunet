@@ -1,4 +1,4 @@
-package com.example.nodeauth;
+package com.example.analytica;
 
 import android.os.Bundle;
 

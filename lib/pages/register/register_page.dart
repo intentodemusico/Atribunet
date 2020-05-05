@@ -1,10 +1,10 @@
 import 'package:disposebag/disposebag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_pattern/flutter_bloc_pattern.dart';
-import 'package:node_auth/pages/register/register.dart';
-import 'package:node_auth/utils/delay.dart';
-import 'package:node_auth/utils/snackbar.dart';
-import 'package:node_auth/widgets/password_textfield.dart';
+import 'package:analytica/pages/register/register.dart';
+import 'package:analytica/utils/delay.dart';
+import 'package:analytica/utils/snackbar.dart';
+import 'package:analytica/widgets/password_textfield.dart';
 
 class RegisterPage extends StatefulWidget {
   static const routeName = '/register_page';

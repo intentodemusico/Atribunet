@@ -1,8 +1,8 @@
 import 'package:disposebag/disposebag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_pattern/flutter_bloc_pattern.dart';
-import 'package:node_auth/pages/reset_password/send_email/send_email.dart';
-import 'package:node_auth/utils/snackbar.dart';
+import 'package:analytica/pages/reset_password/send_email/send_email.dart';
+import 'package:analytica/utils/snackbar.dart';
 
 class SendEmailPage extends StatefulWidget {
   final VoidCallback toggle;

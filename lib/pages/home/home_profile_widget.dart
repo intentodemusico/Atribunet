@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_pattern/flutter_bloc_pattern.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:node_auth/data/constants.dart';
-import 'package:node_auth/domain/models/auth_state.dart';
-import 'package:node_auth/domain/models/user.dart';
-import 'package:node_auth/pages/home/home_bloc.dart';
+import 'package:analytica/data/constants.dart';
+import 'package:analytica/domain/models/auth_state.dart';
+import 'package:analytica/domain/models/user.dart';
+import 'package:analytica/pages/home/home_bloc.dart';
 
 class HomeUserProfile extends StatelessWidget {
   const HomeUserProfile({Key key}) : super(key: key);

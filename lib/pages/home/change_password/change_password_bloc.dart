@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:disposebag/disposebag.dart';
 import 'package:meta/meta.dart';
-import 'package:node_auth/domain/usecases/change_password_use_case.dart';
-import 'package:node_auth/my_base_bloc.dart';
-import 'package:node_auth/pages/home/change_password/change_password.dart';
-import 'package:node_auth/utils/result.dart';
-import 'package:node_auth/utils/streams.dart';
-import 'package:node_auth/utils/type_defs.dart';
+import 'package:analytica/domain/usecases/change_password_use_case.dart';
+import 'package:analytica/my_base_bloc.dart';
+import 'package:analytica/pages/home/change_password/change_password.dart';
+import 'package:analytica/utils/result.dart';
+import 'package:analytica/utils/streams.dart';
+import 'package:analytica/utils/type_defs.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:tuple/tuple.dart';
 

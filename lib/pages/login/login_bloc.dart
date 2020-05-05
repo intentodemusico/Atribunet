@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:disposebag/disposebag.dart';
 import 'package:meta/meta.dart';
-import 'package:node_auth/domain/usecases/login_use_case.dart';
-import 'package:node_auth/my_base_bloc.dart';
-import 'package:node_auth/pages/login/login.dart';
-import 'package:node_auth/utils/result.dart';
-import 'package:node_auth/utils/streams.dart';
-import 'package:node_auth/utils/type_defs.dart';
-import 'package:node_auth/utils/validators.dart';
+import 'package:analytica/domain/usecases/login_use_case.dart';
+import 'package:analytica/my_base_bloc.dart';
+import 'package:analytica/pages/login/login.dart';
+import 'package:analytica/utils/result.dart';
+import 'package:analytica/utils/streams.dart';
+import 'package:analytica/utils/type_defs.dart';
+import 'package:analytica/utils/validators.dart';
 import 'package:rxdart/rxdart.dart';
 
 // ignore_for_file: close_sinks

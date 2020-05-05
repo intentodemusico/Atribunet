@@ -1,17 +1,17 @@
 import 'dart:io';
 
-import 'package:node_auth/data/exception/local_data_source_exception.dart';
-import 'package:node_auth/data/exception/remote_data_source_exception.dart';
-import 'package:node_auth/data/local/entities/user_and_token_entity.dart';
-import 'package:node_auth/data/local/entities/user_entity.dart';
-import 'package:node_auth/data/local/local_data_source.dart';
-import 'package:node_auth/data/remote/remote_data_source.dart';
-import 'package:node_auth/data/remote/response/user_response.dart';
-import 'package:node_auth/domain/models/auth_state.dart';
-import 'package:node_auth/domain/models/user.dart';
-import 'package:node_auth/domain/models/user_and_token.dart';
-import 'package:node_auth/domain/repositories/user_repository.dart';
-import 'package:node_auth/utils/result.dart';
+import 'package:analytica/data/exception/local_data_source_exception.dart';
+import 'package:analytica/data/exception/remote_data_source_exception.dart';
+import 'package:analytica/data/local/entities/user_and_token_entity.dart';
+import 'package:analytica/data/local/entities/user_entity.dart';
+import 'package:analytica/data/local/local_data_source.dart';
+import 'package:analytica/data/remote/remote_data_source.dart';
+import 'package:analytica/data/remote/response/user_response.dart';
+import 'package:analytica/domain/models/auth_state.dart';
+import 'package:analytica/domain/models/user.dart';
+import 'package:analytica/domain/models/user_and_token.dart';
+import 'package:analytica/domain/repositories/user_repository.dart';
+import 'package:analytica/utils/result.dart';
 import 'package:rxdart/rxdart.dart';
 
 part 'mappers.dart';

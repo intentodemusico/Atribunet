@@ -5,12 +5,12 @@ import 'dart:io';
 import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart' as path;
-import 'package:node_auth/data/constants.dart';
-import 'package:node_auth/data/exception/remote_data_source_exception.dart';
-import 'package:node_auth/data/remote/network_utils.dart';
-import 'package:node_auth/data/remote/remote_data_source.dart';
-import 'package:node_auth/data/remote/response/token_response.dart';
-import 'package:node_auth/data/remote/response/user_response.dart';
+import 'package:analytica/data/constants.dart';
+import 'package:analytica/data/exception/remote_data_source_exception.dart';
+import 'package:analytica/data/remote/network_utils.dart';
+import 'package:analytica/data/remote/remote_data_source.dart';
+import 'package:analytica/data/remote/response/token_response.dart';
+import 'package:analytica/data/remote/response/user_response.dart';
 
 class ApiService implements RemoteDataSource {
   static const String xAccessToken = 'x-access-token';

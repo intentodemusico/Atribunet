@@ -3,14 +3,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_pattern/flutter_bloc_pattern.dart';
 import 'package:flutter_provider/flutter_provider.dart';
-import 'package:node_auth/domain/usecases/change_password_use_case.dart';
-import 'package:node_auth/pages/home/change_password/change_password.dart';
-import 'package:node_auth/pages/home/home.dart';
-import 'package:node_auth/pages/home/home_profile_widget.dart';
-import 'package:node_auth/pages/login/login.dart';
-import 'package:node_auth/utils/delay.dart';
-import 'package:node_auth/utils/snackbar.dart';
-import 'package:node_auth/pages/graph/sparkline.dart';
+import 'package:analytica/domain/usecases/change_password_use_case.dart';
+import 'package:analytica/pages/home/change_password/change_password.dart';
+import 'package:analytica/pages/home/home.dart';
+import 'package:analytica/pages/home/home_profile_widget.dart';
+import 'package:analytica/pages/login/login.dart';
+import 'package:analytica/utils/delay.dart';
+import 'package:analytica/utils/snackbar.dart';
+import 'package:analytica/pages/graph/sparkline.dart';
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home_page';

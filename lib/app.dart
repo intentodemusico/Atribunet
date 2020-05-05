@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_pattern/flutter_bloc_pattern.dart';
 import 'package:flutter_provider/flutter_provider.dart';
-import 'package:node_auth/domain/models/auth_state.dart';
-import 'package:node_auth/domain/usecases/get_auth_state_stream_use_case.dart';
-import 'package:node_auth/domain/usecases/get_auth_state_use_case.dart';
-import 'package:node_auth/domain/usecases/login_use_case.dart';
-import 'package:node_auth/domain/usecases/logout_use_case.dart';
-import 'package:node_auth/domain/usecases/register_use_case.dart';
-import 'package:node_auth/domain/usecases/upload_image_use_case.dart';
-import 'package:node_auth/pages/home/home.dart';
-import 'package:node_auth/pages/login/login.dart';
-import 'package:node_auth/pages/register/register.dart';
-import 'package:node_auth/pages/reset_password/reset_password_page.dart';
+import 'package:analytica/domain/models/auth_state.dart';
+import 'package:analytica/domain/usecases/get_auth_state_stream_use_case.dart';
+import 'package:analytica/domain/usecases/get_auth_state_use_case.dart';
+import 'package:analytica/domain/usecases/login_use_case.dart';
+import 'package:analytica/domain/usecases/logout_use_case.dart';
+import 'package:analytica/domain/usecases/register_use_case.dart';
+import 'package:analytica/domain/usecases/upload_image_use_case.dart';
+import 'package:analytica/pages/home/home.dart';
+import 'package:analytica/pages/login/login.dart';
+import 'package:analytica/pages/register/register.dart';
+import 'package:analytica/pages/reset_password/reset_password_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:node_auth/data/local/entities/user_entity.dart';
-import 'package:node_auth/data/serializers.dart';
+import 'package:analytica/data/local/entities/user_entity.dart';
+import 'package:analytica/data/serializers.dart';
 
 part 'user_and_token_entity.g.dart';
 
