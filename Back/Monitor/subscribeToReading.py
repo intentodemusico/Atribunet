@@ -1,5 +1,4 @@
 import paho.mqtt.client as mqtt
-import pymongo
 import json
 broker = "broker.hivemq.com"
 port = 1883
