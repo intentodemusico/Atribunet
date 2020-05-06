@@ -1,5 +1,4 @@
 import paho.mqtt.client as mqtt
-import pymongo
 import json
 import socket
 broker = "broker.hivemq.com"
