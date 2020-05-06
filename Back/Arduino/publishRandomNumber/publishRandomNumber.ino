@@ -8,9 +8,10 @@
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
 #include <Wire.h>
-#include <Time.h>
+#include <NTPClient.h>
+#include <WiFiUdp.h>
 #define LED_BUILTIN 2  
-
+int switcha=0;
 const char* ssid = "Tell my Wi-Fi love her"; // Rellena con el nombre de tu red WiFi
 const char* password = "246813579"; // Rellena con la contraseña de tu red WiFi
 
@@ -19,9 +20,13 @@ int value = 0;
 
 const char* mqtt_server = "broker.hivemq.com";                 //!!!!!!!!!!!!!!!!!!!!!
 int randNumber;
+
 WiFiClient espClient;
 PubSubClient client(espClient);
- 
+
+WiFiUDP ntpUDP;
+NTPClient timeClient(ntpUDP);
+
  /*
 void callback(char* topic, byte* payload, unsigned int length) {
 
@@ -43,6 +48,17 @@ DynamicJsonDocument doc(1024);
   Serial.print("Message arrived [");
   Serial.print(topic);
   Serial.print("] ");
+  if(topic=="analytica/arduino"){
+    Serial.print("switch on/off:");
+    byte b = payload[0];
+//    sprintf(payload,2,"%d");
+     payload[length] = '\0'; // Make payload a string by NULL terminating it.
+   switcha = atoi((char *)payload);
+   Serial.println(switcha);
+    
+    
+  }
+  
   for (int i = 0; i < length; i++) {
     Serial.print((char)payload[i]);
   }
@@ -84,7 +100,7 @@ void setup()
 {
  Serial.begin(9600);
   delay(10);
- 
+  switcha=1;
   // Conectamos a la red WiFi
  
   Serial.println();
@@ -115,6 +131,7 @@ void setup()
  digitalWrite(LED_BUILTIN, HIGH);
  delay(5000);
  digitalWrite(LED_BUILTIN, LOW);
+ timeClient.begin();
 }
  
 void loop()
@@ -123,15 +140,17 @@ void loop()
   reconnect();
  }
  client.loop();
- 
-  long now = millis();
-  if (now - lastMsg > 2000) {
-   randNumber=random(5191951952181);   
+ if(switcha==1){
+  long ahora = millis();
+  if (ahora - lastMsg > 5000) {
+   randNumber=random(-10000,10000);   
   
   // Format your message to Octoblu here as JSON
   // Include commas between each added element. 
   doc["node"]="arduino_esp8266-nodemcu_1";
- String timestamp=String(now);
+  timeClient.update();
+  String tiempo = String(timeClient.getEpochTime());
+ String timestamp=String(tiempo);
   doc["timestamp"]=timestamp;
   doc["data"]=String(randNumber);
   
@@ -140,14 +159,15 @@ void loop()
 
 size_t n = serializeJson(doc, data);
   
-    lastMsg = now;
+    lastMsg = ahora;
     
     //snprintf (msg, 75, "Nodo 1: #%ld", randNumber);
     
     
-    Serial.print("Publish message: ");
-    Serial.println(data);
-    client.publish("analytica/data", data,n);
+      Serial.print("Publish message: ");
+      Serial.println(data);
+      client.publish("analytica/data", data,n);
+    }
     
   }
  /* 
