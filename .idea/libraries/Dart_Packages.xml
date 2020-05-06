@@ -212,6 +212,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_launcher_icons">
+          <value>
+            <list>
+              <option value="F:/Flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.7.5/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_plugin_android_lifecycle">
           <value>
             <list>
@@ -657,6 +664,7 @@
       <root url="file://F:/Flutter/.pub-cache/hosted/pub.dartlang.org/fixnum-0.10.11/lib" />
       <root url="file://F:/Flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc_pattern-1.2.0/lib" />
       <root url="file://F:/Flutter/.pub-cache/hosted/pub.dartlang.org/flutter_circular_chart-0.1.0/lib" />
+      <root url="file://F:/Flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.7.5/lib" />
       <root url="file://F:/Flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-1.0.7/lib" />
       <root url="file://F:/Flutter/.pub-cache/hosted/pub.dartlang.org/flutter_provider-1.1.1/lib" />
       <root url="file://F:/Flutter/.pub-cache/hosted/pub.dartlang.org/flutter_sparkline-0.1.0/lib" />
