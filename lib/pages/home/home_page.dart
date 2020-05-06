@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        title: Text('Inicio'),
+        title: Text('Cuenta'),
       ),
       resizeToAvoidBottomInset: true,
       body: Container(
@@ -83,11 +83,15 @@ class _HomePageState extends State<HomePage>
               margin: EdgeInsets.only(left: 8.0, right: 8.0, top: 16.0),
               width: double.infinity,
               child: RaisedButton.icon(
-                onPressed: showChangePassword,
-                label: Text('Cambiar contraseña'),
-                icon: Icon(Icons.lock_outline),
+              onPressed: () => 
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Chart()),
+                  ),
+                label: Text('Graficos'),
+                icon: Icon(Icons.insert_chart),
                 //color: Theme.of(context).backgroundColor,
-                color: Colors.blueAccent,
+                color: Colors.orange,
                 colorBrightness: Brightness.dark,
                 splashColor: Colors.white.withOpacity(0.5),
               ),
@@ -97,15 +101,11 @@ class _HomePageState extends State<HomePage>
               margin: EdgeInsets.only(left: 8.0, right: 8.0, top: 16.0),
               width: double.infinity,
               child: RaisedButton.icon(
-              onPressed: () => 
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Chart()),
-                  ),
-                label: Text('Datos'),
-                icon: Icon(Icons.graphic_eq),
+                onPressed: showChangePassword,
+                label: Text('Cambiar contraseña'),
+                icon: Icon(Icons.lock_outline),
                 //color: Theme.of(context).backgroundColor,
-                color: Colors.orange,
+                color: Colors.blueAccent,
                 colorBrightness: Brightness.dark,
                 splashColor: Colors.white.withOpacity(0.5),
               ),
