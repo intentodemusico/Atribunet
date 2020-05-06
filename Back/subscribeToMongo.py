@@ -15,16 +15,19 @@ def on_connect(client, userdata, flags, rc):
     # reconnect then subscriptions will be renewed.
     #client.subscribe("$SYS/#")
     client.subscribe("analytica/data")
+    client.subscribe("analytica/mongo")
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    m=json.loads(msg.payload)
-    post=str(msg.payload)[2:-1]
-    posts_id=db.insert_one(m).inserted_id
-    if(posts_id):
-    	print("Mongo: Inserted->",str(m))
-    else:
-    	print("Mongo: Error")
+	on=1 if(msg.topic=="analytica/mongo" and str(msg.payload)[2:-1]=="1") else 0
+	if(on==1):
+	    m=json.loads(msg.payload)
+	    post=str(msg.payload)[2:-1]
+	    posts_id=db.insert_one(m).inserted_id
+	    if(posts_id):
+	    	print("Mongo: Inserted->",str(m))
+    	else:
+    		print("Mongo: Error")
     
 client = mqtt.Client()
 client.on_connect = on_connect
