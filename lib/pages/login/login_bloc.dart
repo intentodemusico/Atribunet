@@ -95,7 +95,7 @@ class LoginBloc extends MyBaseBloc {
     final emailError$ = emailController.stream
         .map((email) {
           if (Validator.isValidEmail(email)) return null;
-          return 'Invalid email address';
+          return 'Email inválido';
         })
         .distinct()
         .share();
@@ -103,7 +103,7 @@ class LoginBloc extends MyBaseBloc {
     final passwordError$ = passwordController.stream
         .map((password) {
           if (Validator.isValidPassword(password)) return null;
-          return 'Password must be at least 6 characters';
+          return 'Contraseña debe tener al menos 6 caracteres';
         })
         .distinct()
         .share();

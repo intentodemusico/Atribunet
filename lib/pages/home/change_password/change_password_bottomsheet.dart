@@ -77,7 +77,7 @@ class _ChangePasswordBottomSheetState extends State<ChangePasswordBottomSheet>
         return PasswordTextField(
           errorText: snapshot.data,
           onChanged: changePasswordBloc.passwordChanged,
-          labelText: 'Old password',
+          labelText: 'Contraseña anterior',
           onSubmitted: () {
             FocusScope.of(context).requestFocus(newPasswordFocusNode);
           },
@@ -93,7 +93,7 @@ class _ChangePasswordBottomSheetState extends State<ChangePasswordBottomSheet>
         return PasswordTextField(
           errorText: snapshot.data,
           onChanged: changePasswordBloc.newPasswordChanged,
-          labelText: 'New password',
+          labelText: 'Nueva contraseña',
           focusNode: newPasswordFocusNode,
           onSubmitted: () {
             FocusScope.of(context).requestFocus(FocusNode());
@@ -137,8 +137,9 @@ class _ChangePasswordBottomSheetState extends State<ChangePasswordBottomSheet>
               FocusScope.of(context).requestFocus(FocusNode());
               changePasswordBloc.changePassword();
             },
+            color: Colors.orange,
             child: Text(
-              'Change password',
+              'Cambiar contraseña',
               style: TextStyle(fontSize: 16.0),
             ),
           );

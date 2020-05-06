@@ -85,7 +85,7 @@ class _RegisterPageState extends State<RegisterPage>
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/bg.jpg'),
+            image: AssetImage('assets/background.jpg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
               Colors.black.withAlpha(0xBF),
@@ -145,7 +145,7 @@ class _RegisterPageState extends State<RegisterPage>
 
   void handleMessage(RegisterMessage message) async {
     if (message is RegisterSuccessMessage) {
-      scaffoldKey.showSnackBar('Register successfully');
+      scaffoldKey.showSnackBar('Registro satisfactorio');
       await delay(1000);
       Navigator.pop<String>(context, message.email);
     }
@@ -153,7 +153,7 @@ class _RegisterPageState extends State<RegisterPage>
       scaffoldKey.showSnackBar(message.message);
     }
     if (message is RegisterInvalidInformationMessage) {
-      scaffoldKey.showSnackBar('Invalid information');
+      scaffoldKey.showSnackBar('Datos inválidos');
     }
   }
 
@@ -191,7 +191,7 @@ class _RegisterPageState extends State<RegisterPage>
       builder: (context, snapshot) {
         return PasswordTextField(
           errorText: snapshot.data,
-          labelText: 'Password',
+          labelText: 'Contraseña',
           onChanged: registerBloc.passwordChanged,
           focusNode: passwordFocusNode,
           onSubmitted: () {
@@ -211,15 +211,15 @@ class _RegisterPageState extends State<RegisterPage>
           FocusScope.of(context).requestFocus(FocusNode());
           registerBloc.submitRegister();
         },
-        color: Theme.of(context).backgroundColor,
+        color: Colors.orange,
         child: Text(
-          'REGISTER',
+          'Registrar',
           style: TextStyle(
             color: Colors.white,
             fontSize: 16.0,
           ),
         ),
-        splashColor: Theme.of(context).accentColor,
+        splashColor: Colors.deepOrange,
       ),
       builder: (context, child) {
         final value = buttonSqueezeAnimation.value;
@@ -230,8 +230,7 @@ class _RegisterPageState extends State<RegisterPage>
           child: Material(
             elevation: 5.0,
             clipBehavior: Clip.antiAlias,
-            shadowColor: Theme.of(context).accentColor,
-            borderRadius: BorderRadius.circular(24.0),
+            borderRadius: BorderRadius.circular(15.0),
             child: value > 75.0
                 ? child
                 : Center(
@@ -240,6 +239,7 @@ class _RegisterPageState extends State<RegisterPage>
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                     ),
                   ),
+
           ),
         );
       },
@@ -254,7 +254,7 @@ class _RegisterPageState extends State<RegisterPage>
           autocorrect: true,
           onChanged: registerBloc.nameChanged,
           decoration: InputDecoration(
-            labelText: 'Name',
+            labelText: 'Nombre',
             errorText: snapshot.data,
             prefixIcon: Padding(
               padding: const EdgeInsetsDirectional.only(end: 8.0),

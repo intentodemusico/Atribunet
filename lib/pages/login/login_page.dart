@@ -91,7 +91,7 @@ class _MyLoginPageState extends State<LoginPage>
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/bg.jpg'),
+            image: AssetImage('assets/background.jpg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
               Colors.black.withAlpha(0xBF),
@@ -117,6 +117,14 @@ class _MyLoginPageState extends State<LoginPage>
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(8.0),
+                        child: Image.asset('assets/logo500.png',width: 200,height: 200),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('Analytica'),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
                         child: emailTextField(loginBloc),
                       ),
                       Padding(
@@ -133,10 +141,6 @@ class _MyLoginPageState extends State<LoginPage>
                         padding: const EdgeInsets.all(4.0),
                         child: needAnAccount(loginBloc),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: forgotPassword(loginBloc),
-                      ),
                     ],
                   ),
                 ),
@@ -150,7 +154,7 @@ class _MyLoginPageState extends State<LoginPage>
 
   void handleMessage(message) async {
     if (message is LoginSuccessMessage) {
-      scaffoldKey.showSnackBar('Login successfully');
+      scaffoldKey.showSnackBar('Accediendo...');
       await delay(1000);
       await Navigator.of(context).pushReplacementNamed(HomePage.routeName);
     }
@@ -158,7 +162,7 @@ class _MyLoginPageState extends State<LoginPage>
       scaffoldKey.showSnackBar(message.message);
     }
     if (message is InvalidInformationMessage) {
-      scaffoldKey.showSnackBar('Invalid information');
+      scaffoldKey.showSnackBar('Datos inválidos');
     }
   }
 
@@ -198,7 +202,7 @@ class _MyLoginPageState extends State<LoginPage>
         return PasswordTextField(
           errorText: snapshot.data,
           onChanged: loginBloc.passwordChanged,
-          labelText: 'Password',
+          labelText: 'Contraseña',
           textInputAction: TextInputAction.done,
           onSubmitted: () {
             FocusScope.of(context).requestFocus(FocusNode());
@@ -217,15 +221,15 @@ class _MyLoginPageState extends State<LoginPage>
           FocusScope.of(context).requestFocus(FocusNode());
           loginBloc.submitLogin();
         },
-        color: Theme.of(context).backgroundColor,
+        color: Colors.blue,
         child: Text(
-          'LOGIN',
+          'Iniciar Sesión',
           style: TextStyle(
             color: Colors.white,
             fontSize: 16.0,
           ),
         ),
-        splashColor: Theme.of(context).accentColor,
+        splashColor: Colors.lightBlueAccent,
       ),
       builder: (context, child) {
         final value = buttonSqueezeAnimation.value;
@@ -236,7 +240,7 @@ class _MyLoginPageState extends State<LoginPage>
           child: Material(
             elevation: 5.0,
             clipBehavior: Clip.antiAlias,
-            shadowColor: Theme.of(context).accentColor,
+            color: Colors.lightBlueAccent,
             borderRadius: BorderRadius.circular(24.0),
             child: value > 75.0
                 ? child
@@ -267,32 +271,7 @@ class _MyLoginPageState extends State<LoginPage>
         }
       },
       child: Text(
-        "Don't have an account? Sign up",
-        style: TextStyle(
-          color: Colors.white70,
-          fontStyle: FontStyle.italic,
-          fontSize: 14.0,
-        ),
-      ),
-    );
-  }
-
-  Widget forgotPassword(LoginBloc loginBloc) {
-    return FlatButton(
-      onPressed: () async {
-        final email = await Navigator.pushNamed(
-          context,
-          ResetPasswordPage.routeName,
-        );
-        print('[DEBUG] email = $email');
-        if (email != null && email is String) {
-          emailController.text = email;
-          loginBloc.emailChanged(email);
-          FocusScope.of(context).requestFocus(passwordFocusNode);
-        }
-      },
-      child: Text(
-        'Forgot password?',
+        "¿No tienes una cuenta aún? ¡Regístrate!",
         style: TextStyle(
           color: Colors.white70,
           fontStyle: FontStyle.italic,

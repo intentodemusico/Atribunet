@@ -105,7 +105,7 @@ class RegisterBloc extends MyBaseBloc {
     final emailError$ = emailController.stream
         .map((email) {
           if (Validator.isValidEmail(email)) return null;
-          return 'Invalid email address';
+          return 'Correo inválido';
         })
         .distinct()
         .share();
@@ -113,7 +113,7 @@ class RegisterBloc extends MyBaseBloc {
     final passwordError$ = passwordController.stream
         .map((password) {
           if (Validator.isValidPassword(password)) return null;
-          return 'Password must be at least 6 characters';
+          return 'Contraseña debe tener al menos 6 caracteres';
         })
         .distinct()
         .share();
@@ -121,7 +121,7 @@ class RegisterBloc extends MyBaseBloc {
     final nameError$ = nameController.stream
         .map((name) {
           if (Validator.isValidUserName(name)) return null;
-          return 'Name must be at least 3 characters';
+          return 'Nombre debe tener al menos 3 caracteres';
         })
         .distinct()
         .share();
@@ -156,6 +156,6 @@ class RegisterBloc extends MyBaseBloc {
     if (result is Failure) {
       return RegisterErrorMessage(result.message, result.error);
     }
-    return RegisterErrorMessage('Unknown result $result');
+    return RegisterErrorMessage('Resultado desconocido $result');
   }
 }

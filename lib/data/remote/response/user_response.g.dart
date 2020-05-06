@@ -79,7 +79,7 @@ class _$UserResponse extends UserResponse {
   
   @override
   @nullable
-  String imageUrl='assets/user.png';
+  String imageUrl='assets/logo.png';
 
   factory _$UserResponse([void Function(UserResponseBuilder) updates]) =>
       (new UserResponseBuilder()..update(updates)).build();
@@ -130,7 +130,7 @@ class _$UserResponse extends UserResponse {
           ..add('name', name)
           ..add('email', email)
           ..add('createdAt', createdAt)
-          ..add('imageUrl', 'assets/user.png'))
+          ..add('imageUrl', 'assets/logo.png'))
         .toString();
   }
 }
@@ -153,7 +153,7 @@ class UserResponseBuilder
 @nullable
   String _imageUrl;
   String get imageUrl => _$this._imageUrl;
-  set imageUrl(String imageUrl) => _$this._imageUrl = 'assets/user.png';
+  set imageUrl(String imageUrl) => _$this._imageUrl = 'assets/logo.png';
 
   UserResponseBuilder();
 
@@ -185,7 +185,7 @@ class UserResponseBuilder
   _$UserResponse build() {
     final _$result = _$v ??
         new _$UserResponse._(
-            name: name, email: email, createdAt: createdAt, imageUrl: 'assets/user.png');
+            name: name, email: email, createdAt: createdAt, imageUrl: 'assets/logo.png');
     replace(_$result);
     return _$result;
   }

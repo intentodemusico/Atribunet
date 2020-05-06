@@ -76,7 +76,7 @@ class _$UserEntity extends UserEntity {
   @override
   final DateTime createdAt;
   @override
-  String imageUrl='assets/user.png';
+  String imageUrl='assets/logo.png';
 
   factory _$UserEntity([void Function(UserEntityBuilder) updates]) =>
       (new UserEntityBuilder()..update(updates)).build();

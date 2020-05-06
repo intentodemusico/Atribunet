@@ -61,13 +61,13 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('Inicio'),
       ),
       resizeToAvoidBottomInset: true,
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/konan.png'),
+            image: AssetImage('assets/bg_home.jpg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
               Colors.black.withAlpha(0xBF),
@@ -84,9 +84,10 @@ class _HomePageState extends State<HomePage>
               width: double.infinity,
               child: RaisedButton.icon(
                 onPressed: showChangePassword,
-                label: Text('Change password'),
+                label: Text('Cambiar contraseña'),
                 icon: Icon(Icons.lock_outline),
-                color: Theme.of(context).backgroundColor,
+                //color: Theme.of(context).backgroundColor,
+                color: Colors.blueAccent,
                 colorBrightness: Brightness.dark,
                 splashColor: Colors.white.withOpacity(0.5),
               ),
@@ -101,9 +102,10 @@ class _HomePageState extends State<HomePage>
                   context,
                   MaterialPageRoute(builder: (context) => Chart()),
                   ),
-                label: Text('Data'),
+                label: Text('Datos'),
                 icon: Icon(Icons.graphic_eq),
-                color: Theme.of(context).backgroundColor,
+                //color: Theme.of(context).backgroundColor,
+                color: Colors.orange,
                 colorBrightness: Brightness.dark,
                 splashColor: Colors.white.withOpacity(0.5),
               ),
@@ -114,9 +116,10 @@ class _HomePageState extends State<HomePage>
               width: double.infinity,
               child: RaisedButton.icon(
                 onPressed: homeBloc.logout,
-                label: Text('Logout'),
+                label: Text('Cerrar sesión'),
                 icon: Icon(Icons.exit_to_app),
-                color: Theme.of(context).backgroundColor,
+                //color: Theme.of(context).backgroundColor,
+                color: Colors.redAccent,
                 colorBrightness: Brightness.dark,
                 splashColor: Colors.white.withOpacity(0.5),
               ),
@@ -132,7 +135,7 @@ class _HomePageState extends State<HomePage>
 
     if (message is LogoutMessage) {
       if (message is LogoutSuccessMessage) {
-        scaffoldKey.showSnackBar('Logout successfully!');
+        scaffoldKey.showSnackBar('Sesión cerrada!');
         await delay(1000);
         await Navigator.of(context).pushNamedAndRemoveUntil(
           LoginPage.routeName,
@@ -140,15 +143,15 @@ class _HomePageState extends State<HomePage>
         );
       }
       if (message is LogoutErrorMessage) {
-        scaffoldKey.showSnackBar('Error when logout: ${message.message}');
+        scaffoldKey.showSnackBar('Eror de salida de sesión: ${message.message}');
       }
     }
     if (message is UpdateAvatarMessage) {
       if (message is UpdateAvatarSuccessMessage) {
-        scaffoldKey.showSnackBar('Upload image successfully!');
+        scaffoldKey.showSnackBar('Cambio foto de perfil satisfactorio!');
       }
       if (message is UpdateAvatarErrorMessage) {
-        scaffoldKey.showSnackBar('Error when upload image: ${message.message}');
+        scaffoldKey.showSnackBar('Error subiendo la foto: ${message.message}');
       }
     }
   }
