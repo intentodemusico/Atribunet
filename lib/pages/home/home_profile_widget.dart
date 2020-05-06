@@ -52,7 +52,7 @@ class HomeUserProfile extends StatelessWidget {
                     height: 90.0,
                   )
                 : Image.asset(
-                    'assets/user.png',
+                    'assets/logo.png',
                     width: 90.0,
                     height: 90.0,
                   ),

@@ -158,7 +158,7 @@ class _RegisterPageState extends State<RegisterPage>
       body:  Container(
         decoration:  BoxDecoration(
             image:  DecorationImage(
-                image:  AssetImage('assets/bg.jpg'),
+                image:  AssetImage('assets/background.jpg'),
                 fit: BoxFit.cover,
                 colorFilter:  ColorFilter.mode(
                     Colors.black.withAlpha(0xBF), BlendMode.darken))),

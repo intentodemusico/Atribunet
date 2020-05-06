@@ -79,11 +79,11 @@ class ChangePasswordBloc extends MyBaseBloc {
           final newPassword = tuple.item2;
 
           if (!_isValidPassword(password)) {
-            return 'Password must be at least 6 characters';
+            return 'Contraseña debe contener al menos 6 caracteres';
           }
 
           if (_isValidPassword(newPassword) && password == newPassword) {
-            return 'New password is same old password!';
+            return 'Nueva contraseña diferente a la anterior';
           }
 
           return null;
@@ -97,11 +97,11 @@ class ChangePasswordBloc extends MyBaseBloc {
           final newPassword = tuple.item2;
 
           if (!_isValidPassword(newPassword)) {
-            return 'New password must be at least 6 characters';
+            return 'Contraseña debe contener al menos 6 caracteres';
           }
 
           if (_isValidPassword(password) && password == newPassword) {
-            return 'New password is same old password!';
+            return 'Nueva contraseña diferente a la anterior';
           }
 
           return null;
@@ -141,13 +141,13 @@ class ChangePasswordBloc extends MyBaseBloc {
         return ChangePasswordState((b) => b
           ..isLoading = false
           ..error = null
-          ..message = 'Change password successfully!');
+          ..message = 'Cambio de contraseña satisfactorio!');
       }
       if (result is Failure) {
         return ChangePasswordState((b) => b
           ..isLoading = false
           ..error = result.error
-          ..message = 'Error when change password: ${result.message}');
+          ..message = 'Error cambiando la contraseña: ${result.message}');
       }
       return null;
     }

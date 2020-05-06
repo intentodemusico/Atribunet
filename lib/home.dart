@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
       body:  Container(
         decoration:  BoxDecoration(
             image:  DecorationImage(
-                image:  AssetImage('assets/bg.jpg'),
+                image:  AssetImage('assets/background.jpg'),
                 fit: BoxFit.cover,
                 colorFilter:  ColorFilter.mode(
                     Colors.black.withAlpha(0xBF), BlendMode.darken))),
@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                                     height: 90.0,
                                   )
                                 :  Image.asset(
-                                    'assets/user.png',
+                                    'assets/logo.png',
                                     width: 90.0,
                                     height: 90.0,
                                   ),

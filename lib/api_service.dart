@@ -27,7 +27,7 @@ class User {
       : name = json['name'],
         email = json['email'],
         createdAt = DateTime.tryParse(json['created_at']) ??  DateTime.now(),
-        imageUrl = 'assets/user.png';
+        imageUrl = 'assets/logo.png';
 
   @override
   String toString() => '$name, $email, $imageUrl';

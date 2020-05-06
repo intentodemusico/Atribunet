@@ -14,7 +14,7 @@ class _$User extends User {
   @override
   final DateTime createdAt;
   @override
-  String imageUrl;//='assets/user.png';
+  String imageUrl;//='assets/logo.png';
 
   factory _$User([void Function(UserBuilder) updates]) =>
       (new UserBuilder()..update(updates)).build();
