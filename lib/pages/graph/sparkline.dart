@@ -12,9 +12,9 @@ class Chart extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'CAMBIE ESTO, PUTO',
       theme: ThemeData(
-        primaryColor: Color(0xffff6101),
+        primaryColor: Color(0xff4EABFC),
       ),
-      home: MyHomePage(title: 'y esto'),
+      home: MyHomePage(title: 'Gráficos'),
     );
   }
 }
@@ -29,8 +29,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var data = [0.0, 1.0, 1.5, 2.0, 0.0, 0.0, -0.5, -1.0, -0.5, 0.0, 0.0];
-  var data1 = [0.0,-2.0,3.5,-2.0,0.5,0.7,0.8,1.0,2.0,3.0,3.2];
+  var data = [0.0, 1.0, 1.5, 2.0, 0.0, 0.0, -0.5, -1.0,1.5,2.5,-1.5,2.5,3.2,5.0,0.7,0.8,1.0,2.0,-1.0,1.5, 2.0, 0.0, 0.0, -0.5,1.0,2.0,-1.0,3.0,0.6,-1.5,-1.0,1.5,2.5,-1.5,2.5,3.2,5.0];
+  var data1 = [0.0,-2.0,3.5,-2.0,0.5,0.7,0.8,1.0,2.0,-1.0,3.0,0.6,-1.5,-2.0,0.3,0.7,0.8,1.0,2.0,-1.0,1.5,0.0, -0.5, -1.0,1.5,2.5,-1.5,-0.5,1.0,2.0,-1.0,3.0,0.6,-1.0,3.0,0.6,-1.5,-2.0];
 
   List<CircularStackEntry> circularData = <CircularStackEntry>[
     CircularStackEntry(
@@ -164,13 +164,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontSize: 30.0,
                     ),),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(1.0),
-                    child: Text(subtitle, style: TextStyle(
-                      fontSize: 20.0,
-                      color: Colors.blueGrey,
-                    ),),
-                  ),
 
                   Padding(
                     padding: EdgeInsets.all(1.0),
@@ -222,13 +215,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontSize: 30.0,
                     ),),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(1.0),
-                    child: Text(subtitle, style: TextStyle(
-                      fontSize: 20.0,
-                      color: Colors.blueGrey,
-                    ),),
-                  ),
 
                   Padding(
                     padding: EdgeInsets.all(1.0),
@@ -256,16 +242,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
+        leading: IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: () {
           //
         }),
         title: Text(widget.title),
-        actions: <Widget>[
-          IconButton(icon: Icon(
-              FontAwesomeIcons.chartLine), onPressed: () {
-            //
-          }),
-        ],
       ),
       body:Container(
         color:Color(0xffE5E5E5),
@@ -276,23 +256,29 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: mychart1Items('Sales by Month','421.3M','+12.9% of target'),
+              child: mychart1Items('Nodo 1','',''),
             ),
-            Padding(
+
+            /*Padding(
               padding: const EdgeInsets.all(8.0),
               child: myCircularItems('Quarterly Profits','68.7M'),
+            ),*/
+            Padding(
+              padding: const EdgeInsets.only(right:8.0),
+              child: myTextItems('Nodos activos','2'),
             ),
             Padding(
               padding: const EdgeInsets.only(right:8.0),
-              child: myTextItems('Mktg. Spend','48.6M'),
+              child: myTextItems('Datos Nodo 1','302'),
             ),
             Padding(
               padding: const EdgeInsets.only(right:8.0),
-              child: myTextItems('Users','25.5M'),
+              child: myTextItems('Datos Nodo 2','284'),
             ),
+
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: mychart2Items('Conversion','0.9M','+19% of target'),
+              child: mychart2Items('Nodo 2','',''),
             ),
 
           ],
