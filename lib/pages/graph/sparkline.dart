@@ -10,7 +10,7 @@ class Chart extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Charts',
+      title: 'CAMBIE ESTO, PUTO',
       theme: ThemeData(
         primaryColor: Color(0xffff6101),
       ),
