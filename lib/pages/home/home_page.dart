@@ -83,11 +83,11 @@ class _HomePageState extends State<HomePage>
               margin: EdgeInsets.only(left: 8.0, right: 8.0, top: 16.0),
               width: double.infinity,
               child: RaisedButton.icon(
-              onPressed: () => 
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Chart()),
-                  ),
+                onPressed: () =>
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Chart()),
+                    ),
                 label: Text('Graficos'),
                 icon: Icon(Icons.insert_chart),
                 //color: Theme.of(context).backgroundColor,
@@ -139,7 +139,7 @@ class _HomePageState extends State<HomePage>
         await delay(1000);
         await Navigator.of(context).pushNamedAndRemoveUntil(
           LoginPage.routeName,
-          (_) => false,
+              (_) => false,
         );
       }
       if (message is LogoutErrorMessage) {
