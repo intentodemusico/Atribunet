@@ -16,7 +16,7 @@ dependencies:
 
 
   path: ^1.6.4
-  http: ^0.12.1
+  http: ^0.13.6
   built_value: ^7.1.0
   tuple: ^1.0.3
   rxdart: ^0.24.0
